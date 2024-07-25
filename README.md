@@ -36,9 +36,9 @@ minikube start --driver=podman
 ```
 
 > [!TIP]
-> You should run `minikube tunnel` in a new shell so your localhost ports  are tunneled to Minikube for running test scripts.
-
-> [!TIP]
+> You should run `minikube tunnel` in a new shell so your localhost ports  are tunneled to Minikube for running test scripts
+> --
+>
 > You can also open a local Kubernetes UI with the command `minikube dashboard` in a new shell. But learning the commands is recommended.
 
 ### Deploy
@@ -96,5 +96,5 @@ Navigate to the jaegar dashboard at
 [http://localhost:16686/](http://localhost:16686/) and you should see traces
 populated.
 
-> [!IMPORTANT] Make sure you ran `minikube tunnel` in a new shell and kept it
-> running so our kubernetes' cluster ports are tunneled to localhost.
+> [!IMPORTANT]
+> Make sure you ran `minikube tunnel` in a new shell and kept it running so our kubernetes' cluster ports are tunneled to localhost.
