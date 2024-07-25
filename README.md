@@ -35,11 +35,11 @@ minikube start --driver=docker --container-runtime=containerd
 minikube start --driver=podman
 ```
 
-> [!TIP] You should run `minikube tunnel` in a new shell so your localhost ports
-> are tunneled to Minikube for running test scripts.
+> [!TIP]
+> You should run `minikube tunnel` in a new shell so your localhost ports  are tunneled to Minikube for running test scripts.
 
-> [!TIP] You can also open a local Kubernetes UI with the command
-> `minikube dashboard` in a new shell. But learning the commands is recommended.
+> [!TIP]
+> You can also open a local Kubernetes UI with the command `minikube dashboard` in a new shell. But learning the commands is recommended.
 
 ### Deploy
 
