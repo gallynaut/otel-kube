@@ -7,6 +7,8 @@ const otelColEndpoint =
   process.env.OTEL_COL_OTLP_ENDPOINT || "http://localhost:4318/v1/traces";
 console.log(`Exporting to traces to ${otelColEndpoint}`);
 
+console.log(`View the jaegar dashboard: http://localhost:16686/`);
+
 const serviceName = process.env.SERVICE_NAME || "OtelDemo";
 
 const exporter = new OTLPTraceExporter({

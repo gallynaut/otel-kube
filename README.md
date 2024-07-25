@@ -16,7 +16,13 @@ brew install minikube
 I've been using [Podman](https://podman.io/docs/installation) as my container
 runtime instead of Docker - idk why.
 
-## Commands
+## Usage
+
+- Start Minikube: Create a container running our kubernetes cluster
+- Deploy: Push our helm charts to the cluster
+- Config: Setup the kubectl cli to connect to our cluster
+- View Logs: View the cluster logs
+-
 
 ### Start Minikube
 
@@ -42,6 +48,7 @@ a new shell. But learning the commands is recommended.
 Run the following to deploy the OpenTelemetry Helm charts.
 
 ```bash
+kubectl create namespace opentelemetry
 kubectl apply -f ./charts
 ```
 
@@ -76,3 +83,22 @@ to it.
 ```bash
 kubectl delete pod `kubectl get pods | awk '/otel-collector/ {print $1}'`
 ```
+
+### Emit Traces
+
+There is a NodeJS script to emit traces every few seconds. Install the npm deps
+then start the script to emit the traces.
+
+```bash
+npm i
+npm start
+```
+
+Navigate to the jaegar dashboard at
+[http://localhost:16686/](http://localhost:16686/) and you should see traces
+populated.
+
+**IMPORTANT**
+
+Make sure you ran `minikube tunnel` in a new shell and kept it running so our
+kubernetes' cluster ports are tunneled to localhost.
